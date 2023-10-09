@@ -11,8 +11,8 @@ using Repositories;
 namespace StoreApp.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20231003140455_start")]
-    partial class start
+    [Migration("20231009163330_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -126,6 +126,9 @@ namespace StoreApp.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("ShowCase")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Summary")
                         .HasColumnType("TEXT");
 
@@ -143,6 +146,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/1.jpg",
                             Name = "Computer",
                             Price = 17000m,
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -152,6 +156,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/2.jpg",
                             Name = "Keyboard",
                             Price = 1000m,
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -161,6 +166,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/3.jpg",
                             Name = "Mouse",
                             Price = 5000m,
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -170,6 +176,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/4.jpg",
                             Name = "Monitor",
                             Price = 7000m,
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -179,6 +186,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/5.jpg",
                             Name = "Deck",
                             Price = 1500m,
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -188,6 +196,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/6.jpg",
                             Name = "History",
                             Price = 25m,
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -197,6 +206,37 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/7.jpg",
                             Name = "Hamlet",
                             Price = 45m,
+                            ShowCase = false,
+                            Summary = ""
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CategoryId = 1,
+                            ImageUrl = "/images/8.jpg",
+                            Name = "Xp-Pen",
+                            Price = 1245m,
+                            ShowCase = true,
+                            Summary = ""
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CategoryId = 2,
+                            ImageUrl = "/images/9.jpg",
+                            Name = "Galaxy FE",
+                            Price = 450m,
+                            ShowCase = true,
+                            Summary = ""
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CategoryId = 1,
+                            ImageUrl = "/images/10.jpg",
+                            Name = "Hp Mouse",
+                            Price = 455m,
+                            ShowCase = true,
                             Summary = ""
                         });
                 });
