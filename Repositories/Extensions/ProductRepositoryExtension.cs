@@ -8,8 +8,14 @@ namespace Repositories.Extensions
         {
             if (categoryId is null)
                 return products;
-            else
-                return products.Where(prd => prd.CategoryId.Equals(categoryId));
+            return products.Where(prd => prd.CategoryId.Equals(categoryId));
+        }
+
+        public static IQueryable<Product> FilteredBySearchTerm(this IQueryable<Product> products, string? searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+                return products;
+            return products.Where(prd => prd.Name.ToLower().Contains(searchTerm.ToLower()));
         }
     }
 }

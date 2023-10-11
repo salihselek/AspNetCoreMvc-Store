@@ -1,8 +1,9 @@
 @model IQueryable<Product>
 
 <div class="row">
-    <div class="col-md-3">        
+    <div class="col-md-3">
         @await Component.InvokeAsync("CategoriesMenu")
+        @await Component.InvokeAsync("ProductFilterMenu")
     </div>
     <div class="col-md-9">
         <div class="row my-3">
@@ -14,7 +15,7 @@
     </div>
 </div>
 
-@section Footer{
+@section Footer {
     <div>
         Only for Index footer
     </div>
