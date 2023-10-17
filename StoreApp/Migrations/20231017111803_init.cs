@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StoreApp.Migrations
 {
-    public partial class startIdentity : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -235,6 +235,21 @@ namespace StoreApp.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "5c3487d2-157b-49ff-aff3-545d628f7fc2", "b2e3a650-afd9-45c9-b640-d9fe4892ca2f", "Editor", "EDITOR" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "60c5ec5d-66d2-42e1-90b6-ef058a2d5152", "8d866a2e-5b83-467b-b110-27d7053982e1", "User", "USER" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "9975efca-6422-4067-84bd-1cfe7f27f71f", "c066e9ab-044d-49d7-8501-b377e43bb308", "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "Categories",

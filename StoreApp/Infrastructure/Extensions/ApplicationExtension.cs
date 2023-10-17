@@ -55,7 +55,8 @@ namespace StoreApp.Infrastructure.Extensions
                 {
                     Email = "salihselek42@gmail.com",
                     PhoneNumber = "5001111010",
-                    UserName = adminUser
+                    UserName = adminUser,
+                    EmailConfirmed = true
                 };
 
                 var result = await userManager.CreateAsync(user, adminPassword);
@@ -66,7 +67,7 @@ namespace StoreApp.Infrastructure.Extensions
                     user,
                     roleManager.Roles.Select(r => r.Name).ToList()
                 );
-                
+
                 if (!roleResult.Succeeded)
                     throw new Exception("System have problems with role defination for admin.");
             }
