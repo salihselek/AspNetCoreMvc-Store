@@ -17,14 +17,14 @@
             <tr>
                 <td>@user.Id</td>
                 <td>@user.UserName</td>
-                <td>-</td>
+                <td user-name="@user.UserName" user-role=""></td>
                 <td>
                     <div class="btn-group">
-                        <a asp-action="Update" asp-route-id="@user.UserName"
-                            class="btn btn-sm btn-warning rounded-0">Edit</a>
-                        <a asp-action="ResetPassword" asp-route-id="@user.UserName"
-                            class="btn btn-sm btn-info rounded-0">Reset
-                            Password</a>
+                        <a asp-action="Update" asp-route-id="@user.UserName" class="btn btn-sm btn-warning rounded-0">
+                            <i class="fa fa-solid fa-edit"></i> Edit
+                        </a>
+                        <a asp-action="ResetPassword" asp-route-id="@user.UserName" class="btn btn-sm btn-info rounded-0"> 
+                            <i class="fa fa-solid fa-edit"></i> Reset Password</a>
                         <form asp-action="DeleteOneUser" method="post">
                             <input type="hidden" name="UserName" value="@user.UserName" />
                             <button type="submit" class="btn btn-danger rounded-0">
