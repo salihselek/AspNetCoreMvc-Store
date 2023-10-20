@@ -13,7 +13,6 @@ namespace Entities.Dtos
         public string? Email { get; init; }
 
         [DataType(DataType.PhoneNumber)]
-        [Required(ErrorMessage = "PhoneNumber is required")]
         public string? PhoneNumber { get; init; }
 
         public HashSet<string> Roles { get; set; } = new HashSet<string>();
