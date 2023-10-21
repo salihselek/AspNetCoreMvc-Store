@@ -20,16 +20,19 @@
                 <td user-name="@user.UserName" user-role=""></td>
                 <td>
                     <div class="btn-group">
-                        <a asp-action="Update" asp-route-id="@user.UserName" class="btn btn-sm btn-warning rounded-0">
-                            <i class="fa fa-solid fa-edit"></i> Edit
+                        <a asp-action="Update" asp-route-id="@user.UserName" class="btn btn-warning"
+                            data-toggle="tooltip" data-placement="top" title="Edit">
+                            <i class="fa fa-solid fa-edit"></i>
                         </a>
-                        <a asp-action="ResetPassword" asp-route-id="@user.UserName" class="btn btn-sm btn-info rounded-0"> 
-                            <i class="fa fa-solid fa-edit"></i> Reset Password</a>
+                        <a asp-action="ResetPassword" asp-route-id="@user.UserName" class="btn btn-info"
+                            data-toggle="tooltip" data-placement="top" title="Reset Password">
+                            <i class="fa fa-solid fa-edit"></i> </a>
                         <form asp-action="DeleteOneUser" method="post">
                             <input type="hidden" name="UserName" value="@user.UserName" />
-                            <button type="submit" class="btn btn-danger rounded-0">
+                            <button type="submit" class="btn btn-danger rounded-0" data-toggle="tooltip" data-placement="top"
+                                title="Delete">
                                 <i class="fa fa-solid fa-trash"></i>
-                                Delete
+
                             </button>
                         </form>
                     </div>
@@ -39,3 +42,12 @@
 
     </tbody>
 </table>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(() => {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
+}

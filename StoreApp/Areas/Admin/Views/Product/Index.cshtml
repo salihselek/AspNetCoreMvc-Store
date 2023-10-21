@@ -26,15 +26,17 @@
                     <td>@prd.Price.ToString("c")</td>
                     <td>
                         <div class="btn-group">
-                            <a class="btn btn-warning" asp-action="Update" asp-route-id="@prd.Id">
-                                <i class="fa fa-edit"></i>Edit
+                            <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-warning"
+                                asp-action="Update" asp-route-id="@prd.Id">
+                                <i class="fa fa-edit"></i>
                             </a>
-                            <a class="btn btn-danger" asp-controller="Product" asp-action="Delete" asp-route-id="@prd.Id">
-                                <i class="fa fa-trash"></i>Delete
+                            <a data-toggle="tooltip" data-placement="top" title="Delete" class="btn btn-danger"
+                                asp-controller="Product" asp-action="Delete" asp-route-id="@prd.Id">
+                                <i class="fa fa-trash"></i>
                             </a>
-                            <a class="btn btn-info" asp-area="" asp-controller="Product" asp-action="Get"
-                                asp-route-id="@prd.Id">
-                                <i class="fa fa-search"></i>Web
+                            <a data-toggle="tooltip" data-placement="top" title="Web" class="btn btn-info" asp-area=""
+                                asp-controller="Product" asp-action="Get" asp-route-id="@prd.Id">
+                                <i class="fa fa-search"></i>
                             </a>
                         </div>
                     </td>
@@ -43,3 +45,12 @@
         </tbody>
     </table>
 </div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(() => {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
+}
