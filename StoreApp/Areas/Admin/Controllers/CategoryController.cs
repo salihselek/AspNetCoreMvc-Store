@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Repositories.Contracts;
 
 namespace StoreApp.Areas.Admin.Controllers
 {
@@ -7,9 +8,17 @@ namespace StoreApp.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
+        private IRepositoryManager _manager;
+
+        public CategoryController(IRepositoryManager manager)
+        {
+            _manager = manager;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var model = _manager.Category.FindAll(false);
+            return View(model);
         }
     }
 }

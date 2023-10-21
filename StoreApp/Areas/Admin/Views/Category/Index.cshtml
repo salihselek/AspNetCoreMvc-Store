@@ -1,1 +1,12 @@
-<h3>Category Index</h3>
+@model IQueryable<Category>
+
+<div class="text-center my-3">
+    <h6 class="display-6">Categories</h6>
+</div>
+
+<ul class="list-group my-3">
+    @foreach (var cat in Model)
+    {
+        <ul class="list-group-item">@cat.Name</ul>
+    }
+</ul>
